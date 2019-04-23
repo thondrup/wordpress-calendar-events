@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Events_widget
- * @version 1.0
+ * @version 1.0.1
  */
 
 /*
@@ -68,7 +68,7 @@ class Events_Widget extends WP_Widget {
         <?php while ( $query->have_posts() ) : $query->the_post(); ?>
           <?php $custom_fields = get_post_custom(get_the_id()); ?>
           <li style="margin-bottom: 30px;">
-            <div style="width:55px; vertical-align: top; display: inline-block;">
+            <div style="width:55px; vertical-align: top; display: inline-block; margin-bottom: 10px;">
               <div style="font-size:30px; font-weight: bold; line-height: 35px;">
                 <?php echo date('d',  strtotime($custom_fields['start_time'][0])); ?>
               </div>
@@ -77,8 +77,10 @@ class Events_Widget extends WP_Widget {
               </div>
             </div>
             <div style="width:190px; display: inline-block;">
-              <a style="font-size:20px; line-height: 1em;" href="<?php the_permalink(); ?>">
-                <?php the_title(); ?>
+              <a style="font-size:20px;" href="<?php the_permalink(); ?>">
+                <p style="line-height: 30px; margin-bottom: 10px;">
+                  <?php the_title(); ?>
+                </p>
               </a>
               <div style="font-size:18px; font-weight: normal;color: #192930; font-family: 'Cooper Hewitt', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
                 <div>Tid: 
