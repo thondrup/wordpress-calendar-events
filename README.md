@@ -1,4 +1,4 @@
-# wp-events
+# Wordpress Calendar Events
 
 A Wordpress widget what will read all posts from a chosen category and display them as events in a
 calendar.
